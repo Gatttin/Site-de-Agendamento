@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Welcome, {{ user.name }}!</h1>
+    <h2>Your Appointments:</h2>
+    <ul>
+        {% for appointment in user.appointments %}
+        <li>{{ appointment.title }} - {{ appointment.start_time }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('appointment', email=user.email) }}">Schedule Appointment</a>
+</body>
+</html>

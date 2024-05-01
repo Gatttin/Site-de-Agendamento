@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule Appointment</title>
+</head>
+<body>
+    <h1>Schedule Appointment</h1>
+    <form action="{{ url_for('appointment', email=user.email) }}" method="post">
+        <input type="text" name="title" placeholder="Title" required><br>
+        <input type="datetime-local" name="start_time" required><br>
+        <input type="datetime-local" name="end_time" required><br>
+        <input type="text" name="location" placeholder="Location" required><br>
+        <input type="submit" value="Schedule">
+    </form>
+</body>
+</html>
